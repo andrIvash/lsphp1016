@@ -21,7 +21,7 @@ echo "\n\n";
 
 //#3
 echo " 3 ___________________________________________________________\n\n";
-define ("ROUND", 360);
+define("ROUND", 360);
 echo ROUND.PHP_EOL;
 // const ROUND = 280;
 
@@ -46,7 +46,7 @@ echo "\n\n";
 //#5
 echo " 5 ___________________________________________________________\n\n";
 $day  = 5;
-switch($day) {
+switch ($day) {
     case ($day > 0 && $day < 6):
         echo "Это рабочий день";
         break;
@@ -102,7 +102,7 @@ echo "<table>";
 for ($i = 1; $i <= 10; $i++) {
     echo "<tr>";
     for ($j = 1; $j <= 10; $j++) {
-        if($i % 2 === 0 && $j % 2 === 0) {
+        if ($i % 2 === 0 && $j % 2 === 0) {
             echo "<td>[".($i*$j)."]</td>";
         } elseif (($i % 2 !== 0 && $j % 2 !== 0)) {
             echo "<td>(".($i*$j).")</td>";
@@ -127,8 +127,8 @@ print_r($arr).PHP_EOL;
 
 $end = end($arr);
 while ($end) {
-  echo $end.' - ';
-  $end = prev($arr);
+    echo $end.' - ';
+    $end = prev($arr);
 }
 
 
