@@ -29,6 +29,9 @@ echo "\n\n";
 echo " 3 ___________________________________________________________\n\n";
 define("ROUND", 360);
 echo ROUND . PHP_EOL;
+if (defined("ROUND")) { // добавил проверку константы
+    echo ROUND . PHP_EOL;
+}
 // const ROUND = 280;
 
 echo "\n\n";
