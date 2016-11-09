@@ -25,7 +25,7 @@ echo $paints = $all - $felt - $pencil . PHP_EOL;
 echo "\n\n";
 
 //#3
-// Не полностью соответствует заданию
+// Принято
 echo " 3 ___________________________________________________________\n\n";
 define("ROUND", 360);
 echo ROUND . PHP_EOL;
