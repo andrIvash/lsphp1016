@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <title>03</title>
+</head>
+<body>
+<h1>Private page ( User Data )</h1>
+<div><span>id : </span><span id="userid"></span></div>
+<div><span>login: </span><span id="userlogin"></span></div>
+<div><span>password: </span><span id="userpassword"></span></div>
+<div><span>description: </span><span id="userdesq"></span></div>
+<div><span>photo: </span><span id="userimg"></span></div>
+<hr>
+
+<div id="file__wrap"></div>
+
+<form id="addfile">
+    <input id="inputfile" type="file" />
+    <input type="submit" value="upload">
+</form>
+
+<div id="resultBlock"></div>
+<script src="main.js"></script>
+<script>
+    window.onload = function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'private.php', true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (this.readyState != 4) return;
+
+            if (this.status != 200) {
+                console.log('ошибка: ' + (this.status ? this.statusText : 'запрос не удался'));
+            } else {
+                console.log(this.responseText);
+                var user = JSON.parse(this.responseText);
+                userid.innerHTML = user.user_info[0].id;
+                userlogin.innerHTML = user.user_info[0].login;
+                userpassword.innerHTML = user.user_info[0].password;
+                userdesq.innerHTML = user.user_info[0].description;
+                var img = new Image(100, 100);
+                img.src = user.user_info[0].foto;
+                userimg.appendChild(img);
+
+                if(!Array.isArray(user.user_files)) {
+                    file__wrap.innerHTML = user.user_files;
+                }
+            }
+        };
+    };
+</script>
+</body>
+</html>

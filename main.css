@@ -1,0 +1,38 @@
+h1 {
+    color: #1A6731;
+}
+#form {
+    margin-bottom: 20px;
+}
+#form > div {
+    margin-bottom: 20px;
+}
+.form__label {
+    display: inline-block;
+    width: 70px;
+    color: #1A6731;
+}
+.form__input {
+    width: 200px;
+}
+.form__btn {
+    min-width: 40px;
+    display: inline-block;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+}
+.form__submit {
+    background: #259146;
+
+}
+.form__clear {
+    background: #8A8A9B;
+}
+
+#resultBlock {
+    color: green;
+    width: 300px;
+}
